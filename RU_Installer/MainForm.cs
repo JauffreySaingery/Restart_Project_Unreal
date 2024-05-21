@@ -41,10 +41,10 @@ namespace RU_Installer
         {
             if (!IsAdministrator())
             {
-                /*MessageBox.Show(this, "Please run this application as administrator and try again.",
-                    "LE Context Menu Installer",
+                MessageBox.Show(this, "Please run this application as administrator and try again.",
+                    "Restart Project Unreal Installer",
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);*/
+                    MessageBoxIcon.Error);
 
                 RunAsAdmin("--InstallAll");
                 return;
@@ -54,9 +54,7 @@ namespace RU_Installer
 
             NotifyShell();
 
-            MessageBox.Show(this, "Install finished. Thanks for using RPU :)\r\n" +
-                            "\r\n" +
-                            "PS: A reboot is required to unlock some components.",
+            MessageBox.Show(this, "Install finished :)\r\n",
                 "Restart Project Unreal Installer",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
@@ -70,9 +68,7 @@ namespace RU_Installer
 
             NotifyShell();
 
-            MessageBox.Show(this, "Uninstall finished \r\n" +
-                            "\r\n" +
-                            "PS: A reboot is required to unlock some components.",
+            MessageBox.Show(this, "Uninstall finished \r\n",
                 "Restart Project Unreal Installer",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
@@ -144,26 +140,6 @@ namespace RU_Installer
                 MessageBox.Show(this, e.Message + "\r\n\r\n" + e.StackTrace);
             }
         }
-
-        /*
-        private static string GetLEVersion()
-        {
-            try
-            {
-                var versionPath =
-                    Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-                        "LEVersion.xml");
-
-                var doc = XDocument.Load(versionPath);
-
-                return doc.Descendants("LEVersion").First().Attribute("Version").Value;
-            }
-            catch
-            {
-                return "0.0.0.0";
-            }
-        }
-        */
 
         private void NotifyShell()
         {

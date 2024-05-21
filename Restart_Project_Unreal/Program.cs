@@ -1,6 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Microsoft.Win32;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Restart_Project_Unreal
@@ -11,13 +13,13 @@ namespace Restart_Project_Unreal
         private static string UnrealLocaction = $@"\Software\Classes\Unreal.ProjectFile\shell\rungenproj";
 
 
-
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main(string[] args)
         {
+
             if (args.Length >= 1)
             {
                 if (args[0] == "/restart")
@@ -88,9 +90,27 @@ namespace Restart_Project_Unreal
                 string BuildProjectfiles = "\"" + UnrealEnginePath + "\\Binaries\\DotNET\\UnrealBuildTool\\UnrealBuildTool.exe\"" + " Development Win64 -Project=" + ArgLocation + " -TargetType=Editor -Progress -NoHotReloadFromIDE \"";
                 string strCmdBuildPF = "/C " + BuildProjectfiles;
 
-                System.Diagnostics.Process.Start("cmd.exe", strCmdGenerateVS).WaitForExit();
-                Console.WriteLine("E");
-                System.Diagnostics.Process.Start("cmd.exe", strCmdBuildPF).WaitForExit();
+
+                string strCmdLanchUnreal = "/C " + ArgLocation;
+
+                
+                Process cmd = new Process();
+                cmd.StartInfo.FileName = "cmd.exe";
+                cmd.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                cmd.StartInfo.Arguments = strCmdGenerateVS;
+                cmd.StartInfo.CreateNoWindow = true;
+                cmd.Start();
+                cmd.WaitForExit();
+
+
+                cmd.StartInfo.Arguments = strCmdLanchUnreal;
+                cmd.Start();
+
+                
+                //System.Diagnostics.Process.Start("cmd.exe", strCmdGenerateVS).WaitForExit();
+                //System.Diagnostics.Process.Start("cmd.exe", strCmdLanchUnreal);
+                Environment.Exit(0);
+                //System.Diagnostics.Process.Start("cmd.exe", strCmdBuildPF).WaitForExit();
 
 
             }
