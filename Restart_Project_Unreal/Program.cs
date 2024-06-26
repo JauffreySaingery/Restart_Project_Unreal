@@ -1,10 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Microsoft.Win32;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.InteropServices;
-using static System.Net.Mime.MediaTypeNames;
-
+;
 namespace Restart_Project_Unreal
 {
     internal static class Program
@@ -116,6 +113,7 @@ namespace Restart_Project_Unreal
             }
             catch (Exception e)
             {
+                System.Windows.Forms.MessageBox.Show(e.Message);
                 Console.WriteLine(e);
                 Console.WriteLine("Some files seems to be opened by an other application, Please close the aplication and type anything to retry.");
                 Console.ReadLine();
