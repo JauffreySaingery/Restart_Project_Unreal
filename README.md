@@ -1,2 +1,2 @@
 # Restart_Project_Unreal
- When you rigth click you can rebuild the entire project.
+Add the option when rigth clicking a .uproject to rebuild the entire project.
