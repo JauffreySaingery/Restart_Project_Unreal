@@ -3,7 +3,14 @@ Add the option when rigth clicking a .uproject to rebuild the entire project.
 
 ![image](https://github.com/user-attachments/assets/4b55fd5f-c35c-45b7-a1d7-f5334187c1ed)
 
-the plugin does the following :
+### /!\ Warrning once installed if you open epic games, it will ask to "fix your project" do not accept this because it will unintall this plugin.
+
+## Installation
+You can only have this plugin as a pocket version.
+Extract and put the folder somewhere on your computer. double click RPU_Installer.exe select what you want and done.
+Afterwords because it is using "Restart_Project_Unreal.exe" you can't delete the folder where you put it in.
+
+## What's RPU doing :
 
 First delete the files :
 - .vs
