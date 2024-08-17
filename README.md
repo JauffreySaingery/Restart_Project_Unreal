@@ -22,11 +22,12 @@ First delete the files :
 
 ![image](https://github.com/user-attachments/assets/5823e82d-3d7c-4f12-be9c-b8f26617731d)
 
-be aware if it can't do it you will not show you a error in version 1.0 !!!
+be aware if it can't do it, It will not show you a error in version 1.0 !!!
 If when click the option restart project option didn't do anything, it's probably because you didn't close unreal or visual studio (it happens when the files that wants to be delete are still used by an other application)
 
 
 Secondly :
+
 It build the solution.
 the afterword launch the build on the project (you will need to answer the question if you want to build the modules).
 
