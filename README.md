@@ -29,4 +29,7 @@ If when click the option restart project option didn't do anything, it's probabl
 Secondly :
 It build the solution.
 the afterword launch the build on the project (you will need to answer the question if you want to build the modules).
+
+![image](https://github.com/user-attachments/assets/93eec34c-2c78-471b-9d2b-d8d5a476e7ae)
+
 Then lanch the project and opens it.
